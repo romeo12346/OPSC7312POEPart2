@@ -56,20 +56,20 @@
         app:layout_constraintStart_toEndOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnregisterpage"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnregisterpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:layout_marginTop="59dp"
         android:text="Register"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/btnlogin"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

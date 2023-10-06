@@ -25,7 +25,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="Toggle metric system (kilometres)/imperial system (miles)"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/btnkilometres"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -38,13 +38,13 @@
         android:layout_marginEnd="31dp"
         android:layout_marginBottom="7dp"
         android:text="Maximum distance to travel to a bird watching hotspot"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword5"
+        app:layout_constraintBottom_toTopOf="@+id/txtmaxdistance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/btnkilometres" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnkilometres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -52,22 +52,22 @@
         android:layout_marginBottom="138dp"
         android:text="Kilometres"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/btnmiles"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnmiles"
         android:layout_width="0dp"
         android:layout_height="51dp"
         android:layout_marginEnd="16dp"
         android:text="Miles"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintStart_toEndOf="@+id/btnkilometres"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/editTextTextPassword5"
+        android:id="@+id/txtmaxdistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="315dp"
