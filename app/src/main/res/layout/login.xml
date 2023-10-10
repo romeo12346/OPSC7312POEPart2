@@ -9,67 +9,57 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="Login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="30dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="106dp"
         android:text="Username:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="106dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="55dp"
         android:text="Password:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="180dp" />
 
     <EditText
         android:id="@+id/txtloginusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2" />
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="81dp" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/textView3" />
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="155dp" />
 
     <Button
         android:id="@+id/btnlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnregisterpage"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2" />
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="259dp" />
 
     <Button
         android:id="@+id/btnregisterpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="59dp"
         android:text="Register"
-        app:layout_constraintStart_toEndOf="@+id/btnlogin"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        tools:layout_editor_absoluteX="209dp"
+        tools:layout_editor_absoluteY="259dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
