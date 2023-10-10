@@ -15,7 +15,7 @@
     <!-- Nearby -->
 
     <EditText
-        android:id="@+id/editTextTextPassword4"
+        android:id="@+id/txtnearbynearestdist"
         android:layout_width="193dp"
         android:layout_height="43dp"
         android:layout_marginEnd="12dp"
@@ -42,18 +42,18 @@
         android:layout_height="305dp"
         android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword4"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword4"
+        app:layout_constraintEnd_toStartOf="@+id/txtnearbynearestdist"
+        app:layout_constraintStart_toStartOf="@+id/txtnearbynearestdist"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnnearbyenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Enter"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword3"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword3"
+        app:layout_constraintEnd_toStartOf="@+id/txtnearbynearest"
+        app:layout_constraintStart_toStartOf="@+id/txtnearbynearest"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Hotspot nearest Distance:"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword4"
+        app:layout_constraintBottom_toBottomOf="@+id/txtnearbynearestdist"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -87,14 +87,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txtnearbylocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="14dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword5"
+        app:layout_constraintBottom_toTopOf="@+id/txtnearbymaxdist"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -108,16 +108,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword5"
+        android:id="@+id/txtnearbymaxdist"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="144dp"
         android:layout_marginBottom="144dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword3"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/txtnearbynearest"
+        app:layout_constraintEnd_toEndOf="@+id/txtnearbylocation"
+        app:layout_constraintStart_toStartOf="@+id/txtnearbylocation"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -131,17 +131,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/txtnearbynearest"
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginTop="21dp"
         android:layout_marginBottom="14dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword4"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword4"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword4"
-        app:layout_constraintTop_toBottomOf="@+id/button" /><![CDATA[
+        app:layout_constraintBottom_toTopOf="@+id/txtnearbynearestdist"
+        app:layout_constraintEnd_toEndOf="@+id/txtnearbynearestdist"
+        app:layout_constraintStart_toStartOf="@+id/txtnearbynearestdist"
+        app:layout_constraintTop_toBottomOf="@+id/btnnearbyenter" /><![CDATA[
 
     -->
 ]]>

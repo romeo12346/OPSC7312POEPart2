@@ -40,7 +40,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginBottom="1dp"
         android:text="Password:"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword2"
+        app:layout_constraintBottom_toBottomOf="@+id/txtloginpassword"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/txtloginpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:text="Login"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnregisterpage"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2" />
+        app:layout_constraintStart_toStartOf="@+id/txtloginpassword" />
 
     <Button
         android:id="@+id/btnregisterpage"
@@ -81,5 +81,5 @@
         android:layout_marginTop="59dp"
         android:text="Register"
         app:layout_constraintStart_toEndOf="@+id/btnlogin"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />-->
+        app:layout_constraintTop_toBottomOf="@+id/txtloginpassword" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
