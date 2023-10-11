@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +28,11 @@ class Loginfrag : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        //Adjusting/Declaring buttons and values
+        val btnlogin: Button = fregment_loginfrag.findViewById(R.id.btnlogin)
+        val btnregisterpage: Button = fregment_loginfrag.findViewById(R.id.btnregisterpage)
+        val txtloginusername: TextView = fregment_loginfrag.(R.id.txtloginusername)
+        val txtloginpassword: TextView = fregment_loginfrag.(R.id.txtloginpassword)
     }
 
     override fun onCreateView(

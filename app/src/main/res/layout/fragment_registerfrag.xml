@@ -25,13 +25,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtnearbynearest"
+        android:id="@+id/txthotspotnearest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="26dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/txthotspotnearestdist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5" />
 
@@ -39,16 +40,16 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="53dp"
         android:layout_marginEnd="14dp"
         android:text="Password:"
-        app:layout_constraintEnd_toStartOf="@+id/txtnearbynearestdist"
+        app:layout_constraintEnd_toStartOf="@+id/txthotspotnearestdist"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/txtnearbynearestdist"
+        android:id="@+id/txthotspotnearestdist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="9dp"
@@ -63,9 +64,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="15dp"
         android:text="Username:"
-        app:layout_constraintEnd_toStartOf="@+id/txtnearbynearest"
+        app:layout_constraintEnd_toStartOf="@+id/txthotspotnearest"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -77,6 +78,6 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="24dp"
         android:text="Register"
-        app:layout_constraintStart_toStartOf="@+id/txtnearbynearestdist"
-        app:layout_constraintTop_toBottomOf="@+id/txtnearbynearestdist" />
+        app:layout_constraintStart_toStartOf="@+id/txthotspotnearestdist"
+        app:layout_constraintTop_toBottomOf="@+id/txthotspotnearestdist" />
 </androidx.constraintlayout.widget.ConstraintLayout>
