@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:text="Enter"
-        app:layout_constraintEnd_toStartOf="@+id/txthotspotnearest"
-        app:layout_constraintStart_toStartOf="@+id/txthotspotnearest"
+        app:layout_constraintEnd_toStartOf="@+id/txtRegEmail"
+        app:layout_constraintStart_toStartOf="@+id/txtRegEmail"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <EditText
@@ -97,25 +97,25 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txthotspotnearestdist"
-        app:layout_constraintStart_toStartOf="@+id/txthotspotnearestdist"
+        app:layout_constraintEnd_toStartOf="@+id/txtRegPassword"
+        app:layout_constraintStart_toStartOf="@+id/txtRegPassword"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <EditText
-        android:id="@+id/txthotspotnearest"
+        android:id="@+id/txtRegEmail"
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginTop="57dp"
         android:layout_marginBottom="55dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/txthotspotnearestdist"
-        app:layout_constraintEnd_toEndOf="@+id/txthotspotnearestdist"
-        app:layout_constraintStart_toStartOf="@+id/txthotspotnearestdist"
+        app:layout_constraintBottom_toBottomOf="@+id/txtRegPassword"
+        app:layout_constraintEnd_toEndOf="@+id/txtRegPassword"
+        app:layout_constraintStart_toStartOf="@+id/txtRegPassword"
         app:layout_constraintTop_toTopOf="@+id/btnnearbyenter" />
 
     <EditText
-        android:id="@+id/txthotspotnearestdist"
+        android:id="@+id/txtRegPassword"
         android:layout_width="193dp"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"

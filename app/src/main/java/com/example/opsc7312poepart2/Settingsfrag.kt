@@ -18,6 +18,6 @@ class Settingsfrag : Fragment() {
         val btnmiles: Button = fragment_settingsfrag.findViewById(R.id.btnmiles)
         val txtmaxdistance: TextView = fragment_settingsfrag.findViewById(R.id.txtmaxdistance)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settingsfrag, container, false)
+        return fragment_settingsfrag
     }
 }

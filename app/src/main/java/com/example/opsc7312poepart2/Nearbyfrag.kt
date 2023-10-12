@@ -21,15 +21,15 @@ class Nearbyfrag : Fragment() {
         val btnnearbyenter: Button = fragment_nearbyfrag.findViewById(R.id.btnnearbyenter)
         val txtnearbylocation: TextView = fragment_nearbyfrag.findViewById(R.id.txtnearbylocation)
         val txtnearbymaxdist: TextView = fragment_nearbyfrag.findViewById(R.id.txtnearbymaxdist)
-        val txthotspotnearest: TextView = fragment_nearbyfrag.findViewById(R.id.txthotspotnearest)
-        val txthotspotnearestdist: TextView = fragment_nearbyfrag.findViewById(R.id.txthotspotnearestdist)//nearbymapView
+        val txthotspotnearest: TextView = fragment_nearbyfrag.findViewById(R.id.txtRegEmail)
+        val txthotspotnearestdist: TextView = fragment_nearbyfrag.findViewById(R.id.txtRegPassword)//nearbymapView
         val nearbymapView: MapView = fragment_nearbyfrag.findViewById(R.id.nearbymapView)
-        return inflater.inflate(R.layout.fragment_nearbyfrag, container, false)
 
-        //Button Methods
-        //Enters th eUsers data so it can be stored and manipulated
         btnnearbyenter.setOnClickListener(){
-            //
+
         }
+        return fragment_nearbyfrag
+
+
     }
 }

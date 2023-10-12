@@ -19,28 +19,28 @@ class MainActivity : AppCompatActivity() {
         val btnsettings: Button = findViewById(R.id.btnsettings)
 
         //Button Methods
-        btnhotspots.setOnClickListener(){
-            val i = Intent(this, fragment_hotspotsfrag::class.java)//Must create .xml
-            startActivity(i)
-        }
+//        btnhotspots.setOnClickListener(){
+//            val i = Intent(this, fragment_hotspotsfrag::class.java)//Must create .xml
+//            startActivity(i)
+//        }
         btnnearby.setOnClickListener(){
-            val i = Intent(this, fragment_nearbyfrag::class.java)
+            val i = Intent(this, Nearbyfrag::class.java)
             startActivity(i)
         }
         btnbirds.setOnClickListener(){
-            val i = Intent(this, fragment_birdsyfrag::class.java)//Must create .xml
+            val i = Intent(this, Birdsfrag::class.java)//Must create .xml
             startActivity(i)
         }
-        btnrare.setOnClickListener(){
-            val i = Intent(this, fragment_rarefrag::class.java)//Must create .xml
-            startActivity(i)
-        }
+//        btnrare.setOnClickListener(){
+//            val i = Intent(this, fragment_rarefrag::class.java)//Must create .xml
+//            startActivity(i)
+//        }
         btnchecklists.setOnClickListener(){
-            val i = Intent(this, fragment_checklistsfrag::class.java)//Must create .xml
+            val i = Intent(this, Checklistsfrag::class.java)//Must create .xml
             startActivity(i)
         }
         btnsettings.setOnClickListener(){
-            val i = Intent(this, fragment_settingsfrag::class.java)
+            val i = Intent(this, Settingsfrag::class.java)
             startActivity(i)
         }
     }
