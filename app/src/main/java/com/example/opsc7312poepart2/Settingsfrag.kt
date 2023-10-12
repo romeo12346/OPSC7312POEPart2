@@ -19,5 +19,21 @@ class Settingsfrag : Fragment() {
         val txtmaxdistance: TextView = fragment_settingsfrag.findViewById(R.id.txtmaxdistance)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settingsfrag, container, false)
+
+        //Button Methods
+        //Changes to Kilometres
+        btnkilometres.setOnClickListener(){
+            //1 Kilometre = 0,621371 Miles
+            //double measurement
+        }
+        //Changes to Kilometres
+        btnmiles.setOnClickListener(){
+            //1 Mile = 1,60934 Kilometres
+            //double measurement
+        }
+        //Sets Max Distance
+        txtmaxdistance.setOnClickListener(){
+            //
+        }
     }
 }
