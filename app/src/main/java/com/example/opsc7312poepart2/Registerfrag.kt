@@ -20,5 +20,11 @@ class Registerfrag : Fragment() {
         val txtregisterpassword: TextView = fragment_registerfrag.findViewById(R.id.txthotspotnearestdist)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_registerfrag, container, false)
+
+        //Button Methods
+        //Registers User into system, creates account and lets them in
+        btnregister.setOnClickListener(){
+            //
+        }
     }
 }

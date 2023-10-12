@@ -25,5 +25,11 @@ class Nearbyfrag : Fragment() {
         val txthotspotnearestdist: TextView = fragment_nearbyfrag.findViewById(R.id.txthotspotnearestdist)//nearbymapView
         val nearbymapView: MapView = fragment_nearbyfrag.findViewById(R.id.nearbymapView)
         return inflater.inflate(R.layout.fragment_nearbyfrag, container, false)
+
+        //Button Methods
+        //Enters th eUsers data so it can be stored and manipulated
+        btnnearbyenter.setOnClickListener(){
+            //
+        }
     }
 }

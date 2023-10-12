@@ -1,5 +1,6 @@
 package com.example.opsc7312poepart2
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,5 +26,15 @@ class Loginfrag : Fragment() {
         return inflater.inflate(R.layout.fragment_loginfrag, container, false)
         //return the variables
         //val fragment_loginfrag = inflater.inflate(R.layout.fragment_loginfrag, container, false)
+
+        //Logs User into system
+        btnlogin.setOnClickListener(){
+            //txtcurrenthunger.text = feed++.toString()
+        }
+        //redirects to register Page
+        btnregisterpage.setOnClickListener(){
+            val i = Intent(applicationContext, Main2Activity::class.java)
+            startActivity(i)
+        }
     }
 }

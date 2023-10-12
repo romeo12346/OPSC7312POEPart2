@@ -1,9 +1,10 @@
 package com.example.opsc7312poepart2
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,5 +17,31 @@ class MainActivity : AppCompatActivity() {
         val btnrare: Button = findViewById(R.id.btnrare)
         val btnchecklists: Button = findViewById(R.id.btnchecklists)
         val btnsettings: Button = findViewById(R.id.btnsettings)
+
+        //Button Methods
+        btnhotspots.setOnClickListener(){
+            val i = Intent(this, fragment_hotspotsfrag::class.java)//Must create .xml
+            startActivity(i)
+        }
+        btnnearby.setOnClickListener(){
+            val i = Intent(this, fragment_nearbyfrag::class.java)
+            startActivity(i)
+        }
+        btnbirds.setOnClickListener(){
+            val i = Intent(this, fragment_birdsyfrag::class.java)//Must create .xml
+            startActivity(i)
+        }
+        btnrare.setOnClickListener(){
+            val i = Intent(this, fragment_rarefrag::class.java)//Must create .xml
+            startActivity(i)
+        }
+        btnchecklists.setOnClickListener(){
+            val i = Intent(this, fragment_checklistsfrag::class.java)//Must create .xml
+            startActivity(i)
+        }
+        btnsettings.setOnClickListener(){
+            val i = Intent(this, fragment_settingsfrag::class.java)
+            startActivity(i)
+        }
     }
 }
