@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="182dp"
-        android:text="Nearby"
+        android:layout_marginEnd="152dp"
+        android:text="Nearby/Hotspots"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPassword6"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
         android:id="@+id/editTextTextPassword6"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="182dp"
+        android:layout_marginEnd="151dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toStartOf="@+id/textView17"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="58dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="15dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
         android:id="@+id/txtnearbymaxdist"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="61dp"
         android:layout_marginBottom="59dp"
         android:ems="10"
         android:inputType="textPassword"
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="42dp"
         android:text="Max distance you travel:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
@@ -87,22 +87,23 @@
         android:id="@+id/map"
         android:layout_width="411dp"
         android:layout_height="367dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="93dp"
         app:layout_constraintEnd_toStartOf="@+id/txtRegPassword"
-        app:layout_constraintStart_toStartOf="@+id/txtRegPassword" />
+        app:layout_constraintStart_toStartOf="@+id/txtRegPassword"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <EditText
         android:id="@+id/txtRegEmail"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="11dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginBottom="57dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/txtRegPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/txtRegPassword"
         app:layout_constraintEnd_toEndOf="@+id/txtRegPassword"
         app:layout_constraintStart_toStartOf="@+id/txtRegPassword"
-        app:layout_constraintTop_toBottomOf="@+id/btnnearbyenter" />
+        app:layout_constraintTop_toTopOf="@+id/btnnearbyenter" />
 
     <EditText
         android:id="@+id/txtRegPassword"
@@ -130,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="36dp"
         android:text="Hotspot nearest Distance:"
         app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintStart_toStartOf="parent" />
