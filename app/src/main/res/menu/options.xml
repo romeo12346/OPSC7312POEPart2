@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--<item
-        android:id="@+id/ic_pet_status"
-        android:icon="@drawable/status"
-        android:title="Pet Status"/>
-    <item
-        android:id="@+id/ic_pet_interaction"
-        android:icon="@drawable/interactive_icon"
-        android:title="Pet Interaction"/>-->
+
     <item
         android:id="@+id/ic_birdsfrag"
+        android:icon="@drawable/bird"
         android:title="Birds"/>
     <item
         android:id="@+id/ic_checklists"
+        android:icon="@drawable/baseline_list_24"
         android:title="Checklists"/>
     <item
         android:id="@+id/ic_createchecklists"
-        android:title="Create checklists"/>
+        android:icon="@drawable/create"
+        android:title="Create"/>
     <item
         android:id="@+id/ic_nearbyfrag"
+        android:icon="@drawable/map"
         android:title="Nearby"/>
     <item
         android:id="@+id/ic_settingsfrag"
+        android:icon="@drawable/baseline_app_settings_alt_24"
         android:title="Settings"/>
 </menu>
