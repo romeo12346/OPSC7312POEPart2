@@ -8,15 +8,15 @@
     <item
         android:id="@+id/ic_checklists"
         android:icon="@drawable/baseline_list_24"
-        android:title="Checklists"/>
+        android:title=" Checklists/Observations"/>
     <item
         android:id="@+id/ic_createchecklists"
         android:icon="@drawable/create"
-        android:title="Create"/>
+        android:title="Create Checklists"/>
     <item
         android:id="@+id/ic_nearbyfrag"
         android:icon="@drawable/map"
-        android:title="Nearby"/>
+        android:title="Nearby/Hotspots"/>
     <item
         android:id="@+id/ic_settingsfrag"
         android:icon="@drawable/baseline_app_settings_alt_24"
