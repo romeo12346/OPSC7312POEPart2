@@ -1,4 +1,4 @@
-package com.example.opsc7312poepart2
+package bird.app.opsc7312poepart2
 
 import android.content.Intent
 import android.os.Bundle

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.opsc7312poepart2"
+    namespace = "bird.app.opsc7312poepart2"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.opsc7312poepart2"
+        applicationId = "bird.app.opsc7312poepart2"
         minSdk = 27
         targetSdk = 33
         versionCode = 1

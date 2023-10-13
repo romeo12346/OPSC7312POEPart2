@@ -1,4 +1,4 @@
-package com.example.opsc7312poepart2
+package bird.app.opsc7312poepart2
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

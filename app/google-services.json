@@ -29,7 +29,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:846029165198:android:47553f6d3f2ca7a0816fdf",
         "android_client_info": {
-          "package_name": "com.example.opsc7311poepart2"
+          "package_name": "bird.app.opsc7311poepart2"
         }
       },
       "oauth_client": [],
@@ -48,7 +48,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:846029165198:android:ef67c70ab1058156816fdf",
         "android_client_info": {
-          "package_name": "com.example.opsc7312poepart2"
+          "package_name": "bird.app.opsc7312poepart2"
         }
       },
       "oauth_client": [],
@@ -67,7 +67,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:846029165198:android:bba4b75154ffcdce816fdf",
         "android_client_info": {
-          "package_name": "com.example.test"
+          "package_name": "bird.app.test"
         }
       },
       "oauth_client": [],
