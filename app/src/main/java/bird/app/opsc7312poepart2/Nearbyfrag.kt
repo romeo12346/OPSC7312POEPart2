@@ -25,6 +25,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
@@ -39,6 +40,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
     var userLongitude: Double= 0.0
     var distance: Int = 25
     private lateinit var Map : GoogleMap
+    private var currentPolyline: Polyline? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -139,6 +141,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
             }
     }
     override fun onMarkerClick(marker: Marker): Boolean {
+        currentPolyline?.remove()
         val URL = getDirectionURL(LatLng(userLatitude, userLongitude),LatLng( marker.position.latitude,marker.position.longitude))
         Log.d("GoogleMap", "URL : $URL")
         GetDirection(URL).execute()
@@ -221,7 +224,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
                 lineoption.color(Color.BLUE)
                 lineoption.geodesic(true)
             }
-            Map.addPolyline(lineoption)
+           currentPolyline = Map.addPolyline(lineoption)
         }
     }
     fun decodePolyline(encoded: String): List<LatLng> {
