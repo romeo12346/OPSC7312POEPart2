@@ -1,14 +1,16 @@
 package bird.app.opsc7312poepart2
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+
 
 class Login : AppCompatActivity() {
 
@@ -18,7 +20,7 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         auth = Firebase.auth
-
+        checkFirebaseUser()
         val btnlogin: Button = findViewById(R.id.btnlogin)
         val btnregisterpage: Button = findViewById(R.id.btnregisterpage)
 
@@ -59,5 +61,14 @@ class Login : AppCompatActivity() {
             }.addOnFailureListener{
                 Toast.makeText(this,"Error occured ${it.localizedMessage}" , Toast.LENGTH_SHORT).show()
             }
+    }
+    private fun checkFirebaseUser() {
+        val firebaseUser: FirebaseUser? = auth.currentUser
+        if (firebaseUser != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        } else {
+
+        }
     }
 }

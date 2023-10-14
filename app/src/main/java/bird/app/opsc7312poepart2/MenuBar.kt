@@ -8,11 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 //Fragments
 val Frag1 = Birdsfrag()
 val Frag2 = Checklistsfrag()
-val Frag3 = Createchecklistsfrag()
-//val Frag4 = Loginfrag()
-//val Frag5 = MainActivity()
 val Frag6 = Nearbyfrag()
-//val Frag7 = Registerfrag()
 val Frag8 = Settingsfrag()
 
 class MenuBar : AppCompatActivity() {
@@ -26,7 +22,6 @@ class MenuBar : AppCompatActivity() {
             when(it.itemId){
                 R.id.ic_birdsfrag->replaceFrag(Frag1)
                 R.id.ic_checklists->replaceFrag(Frag2)
-                R.id.ic_createchecklists->replaceFrag(Frag3)//still need to create it
                 R.id.ic_nearbyfrag->replaceFrag(Frag6)
                 R.id.ic_settingsfrag->replaceFrag(Frag8)
             }

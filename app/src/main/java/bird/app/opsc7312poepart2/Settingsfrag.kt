@@ -1,5 +1,6 @@
 package bird.app.opsc7312poepart2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,16 +8,29 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
 class Settingsfrag : Fragment() {
+    private lateinit var auth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        auth = Firebase.auth
         val fragment_settingsfrag = inflater.inflate(R.layout.fragment_settingsfrag, container, false)
         //Adjusting/Declaring buttons and values
         val btnkilometres: Button = fragment_settingsfrag.findViewById(R.id.btnkilometres)
         val btnmiles: Button = fragment_settingsfrag.findViewById(R.id.btnmiles)
         val txtmaxdistance: TextView = fragment_settingsfrag.findViewById(R.id.txtmaxdistance)
+        val logout: Button = fragment_settingsfrag.findViewById(R.id.btnLogout)
+
+        logout.setOnClickListener(){
+            auth.signOut()
+            val intent = Intent(context, Login::class.java)
+            startActivity(intent)
+        }
         // Inflate the layout for this fragment
         return fragment_settingsfrag
 

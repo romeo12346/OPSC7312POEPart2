@@ -82,5 +82,15 @@
         android:text="Maximum distance to travel to a bird watching hotspot"
         app:layout_constraintBottom_toTopOf="@+id/txtmaxdistance"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnmiles" />-->
+        app:layout_constraintTop_toBottomOf="@+id/btnmiles" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:text="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtmaxdistance" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
