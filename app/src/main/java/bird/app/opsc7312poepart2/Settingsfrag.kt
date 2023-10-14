@@ -1,12 +1,12 @@
 package bird.app.opsc7312poepart2
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 class Settingsfrag : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,11 +23,17 @@ class Settingsfrag : Fragment() {
         //Proper Methods
         //Set App to kilometres -> 1 Km = 0,621371 Miles
         btnkilometres.setOnClickListener(){
-            val measurementKm = 1* 0.621371 //may work better as double value
+            //val measurementKm = 1* 0.621371 //may work better as double value
+            //Testing out method
+            val measurement = 1
+            val measurementKm = measurement* 0.621371
         }
         //Set App to Miles -> 1 Mile = 1,60934 Km
         btnmiles.setOnClickListener(){
-            val measurementM = 1* 1.60934 //may work better as double value
+            //val measurementM = 1* 1.60934 //may work better as double value
+            //Testing out method
+            val measurement = 1
+            val measurementM = measurement* 0.621371
         }
         //Sets maximum distance for user
         txtmaxdistance.setOnClickListener(){
