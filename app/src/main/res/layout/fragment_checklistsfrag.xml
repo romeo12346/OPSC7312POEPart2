@@ -17,12 +17,13 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="20dp"
         android:text="Checklists/Observations"
         app:layout_constraintBottom_toTopOf="@+id/textView26"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--<TextView
         android:id="@+id/textView24"
@@ -79,64 +80,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="74dp"
+        android:layout_marginBottom="8dp"
         android:text="Created and submitted Checklists/Observations stored here."
+        app:layout_constraintBottom_toTopOf="@+id/observationRV"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:text="SUBMITTED"
-        app:layout_constraintBottom_toTopOf="@+id/txtcheclistsubmitted"
-        app:layout_constraintEnd_toEndOf="@+id/txtcheclistsubmitted" />
-
-    <EditText
-        android:id="@+id/txtcheclistsubmitted"
-        android:layout_width="0dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginEnd="10dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtcheclistnotsubmitted"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtcheclistnotsubmitted"
-        android:layout_width="188dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView27"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="5dp"
-        android:text="NOT SUBMITTED"
-        app:layout_constraintBottom_toTopOf="@+id/txtcheclistnotsubmitted"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine"
-        android:layout_width="0dp"
+        android:layout_width="3dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="127dp"
+        android:layout_marginBottom="94dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toStartOf="@+id/textView23"
+        app:layout_constraintBottom_toTopOf="@+id/observationRV"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/observationRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

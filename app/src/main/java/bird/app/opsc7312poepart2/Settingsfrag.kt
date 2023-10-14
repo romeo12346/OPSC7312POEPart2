@@ -20,10 +20,10 @@ class Settingsfrag : Fragment() {
     ): View? {
         auth = Firebase.auth
         val fragment_settingsfrag = inflater.inflate(R.layout.fragment_settingsfrag, container, false)
+
         //Adjusting/Declaring buttons and values
         val btnkilometres: Button = fragment_settingsfrag.findViewById(R.id.btnkilometres)
         val btnmiles: Button = fragment_settingsfrag.findViewById(R.id.btnmiles)
-        val txtmaxdistance: TextView = fragment_settingsfrag.findViewById(R.id.txtmaxdistance)
         val logout: Button = fragment_settingsfrag.findViewById(R.id.btnLogout)
 
         logout.setOnClickListener(){
@@ -48,10 +48,6 @@ class Settingsfrag : Fragment() {
             //Testing out method
             val measurement = 1
             val measurementM = measurement* 0.621371
-        }
-        //Sets maximum distance for user
-        txtmaxdistance.setOnClickListener(){
-            val maxdistance = txtmaxdistance
         }
     }
 }

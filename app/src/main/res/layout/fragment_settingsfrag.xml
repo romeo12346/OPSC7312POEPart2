@@ -25,24 +25,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txtmaxdistance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="377dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView34" />
-
     <TextView
         android:id="@+id/textView33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="26dp"
         android:text="Toggle metric system (kilometres)/imperial system (miles)"
         app:layout_constraintBottom_toTopOf="@+id/btnmiles"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,11 +40,10 @@
         android:id="@+id/btnkilometres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
+        android:layout_marginStart="73dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="163dp"
+        android:layout_marginEnd="51dp"
         android:text="Kilometres"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toStartOf="@+id/btnmiles"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
@@ -65,32 +52,22 @@
         android:id="@+id/btnmiles"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="77dp"
         android:text="Miles"
-        app:layout_constraintBottom_toTopOf="@+id/textView34"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnkilometres"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
-
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="35dp"
-        android:text="Maximum distance to travel to a bird watching hotspot"
-        app:layout_constraintBottom_toTopOf="@+id/txtmaxdistance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnmiles" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="59dp"
+        android:layout_marginBottom="409dp"
         android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtmaxdistance" />-->
+        app:layout_constraintTop_toBottomOf="@+id/btnmiles" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import android.Manifest
 import android.graphics.Color
+import android.location.Geocoder
 import android.os.AsyncTask
 import android.os.Handler
 import android.os.Looper
@@ -31,6 +32,7 @@ import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.net.URL
+import java.util.Locale
 import java.util.concurrent.Executors
 
 class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
@@ -40,6 +42,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
     var userLongitude: Double= 0.0
     var distance: Int = 25
     private lateinit var Map : GoogleMap
+    private lateinit var userLocation: TextView
     private var currentPolyline: Polyline? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,11 +52,8 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
         // Inflate the layout for this fragment
         val fragment_nearbyfrag = inflater.inflate(R.layout.fragment_nearbyfrag, container, false)
         //Adjusting/Declaring buttons and values
-        val btnnearbyenter: Button = fragment_nearbyfrag.findViewById(R.id.btnnearbyenter)
-        val txtnearbylocation: TextView = fragment_nearbyfrag.findViewById(R.id.txtnearbylocation)
+        userLocation= fragment_nearbyfrag.findViewById(R.id.userlocation)
         val seekbar: SeekBar = fragment_nearbyfrag.findViewById(R.id.distanceSB)
-        val txthotspotnearest: TextView = fragment_nearbyfrag.findViewById(R.id.txtRegEmail)
-        val txthotspotnearestdist: TextView = fragment_nearbyfrag.findViewById(R.id.txtRegPassword)
         mapView = fragment_nearbyfrag.findViewById(R.id.map)
 
         val mapViewBundle = savedInstanceState?.getBundle(MAPVIEW_BUNDLE_KEY)
@@ -136,6 +136,10 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
                     userLatitude = location.latitude
                     userLongitude = location.longitude
                     val userLatLong = LatLng(userLatitude, userLongitude)
+                    val geocoder = context?.let { Geocoder(it, Locale.getDefault()) }
+                    val addresses = geocoder?.getFromLocation(location.latitude , location.longitude, 1)
+
+                    userLocation.text = addresses?.get(0)?.getAddressLine(0)
                     InfoGetter(map , userLatLong)
                 }
             }
