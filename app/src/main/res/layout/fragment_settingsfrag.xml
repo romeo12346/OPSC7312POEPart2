@@ -18,9 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="43dp"
         android:text="Settings"
-        app:layout_constraintBottom_toTopOf="@+id/textView33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,32 +28,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginTop="102dp"
         android:text="Toggle metric system (kilometres)/imperial system (miles)"
-        app:layout_constraintBottom_toTopOf="@+id/btnmiles"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnkilometres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="51dp"
+        android:layout_marginStart="81dp"
+        android:layout_marginEnd="19dp"
         android:text="Kilometres"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnmiles"
         app:layout_constraintEnd_toStartOf="@+id/btnmiles"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnmiles"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="77dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="106dp"
         android:text="Miles"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnkilometres"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
@@ -64,9 +59,8 @@
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="409dp"
+        android:layout_marginTop="74dp"
         android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnmiles" />-->

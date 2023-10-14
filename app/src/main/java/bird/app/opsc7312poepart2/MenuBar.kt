@@ -16,7 +16,7 @@ class MenuBar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_bar)
 
-        replaceFrag(Frag1)
+        replaceFrag(Frag6)
         val bottomNav = findViewById<BottomNavigationView>(R.id.NavBar)
         bottomNav.setOnItemSelectedListener{
             when(it.itemId){

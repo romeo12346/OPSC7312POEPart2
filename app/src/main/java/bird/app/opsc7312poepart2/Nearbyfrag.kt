@@ -35,6 +35,7 @@ import java.net.URL
 import java.util.Locale
 import java.util.concurrent.Executors
 
+var localID  = ""
 class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private lateinit var mapView: MapView
     lateinit var variablesList:List<Place>
@@ -44,6 +45,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
     private lateinit var Map : GoogleMap
     private lateinit var userLocation: TextView
     private var currentPolyline: Polyline? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -147,7 +149,10 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
     override fun onMarkerClick(marker: Marker): Boolean {
         currentPolyline?.remove()
         val URL = getDirectionURL(LatLng(userLatitude, userLongitude),LatLng( marker.position.latitude,marker.position.longitude))
-        Log.d("GoogleMap", "URL : $URL")
+        val s = marker.title.toString()
+        localID = s.replaceBefore(":","").substring(1)
+
+        Log.d("GoogleMap", "URL: Yo $localID")
         GetDirection(URL).execute()
 
         return false
@@ -165,9 +170,10 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
                 // After getting the data, you can add markers on the map and move the camera.
                 for (i in variablesList.indices) {
                     val latlng = LatLng(variablesList[i].lat, variablesList[i].lng)
-                    map.addMarker(MarkerOptions().position(latlng).title(variablesList[i].locName).snippet("Number of Species " + variablesList[i].numSpeciesAllTime))
+                    map.addMarker(MarkerOptions().position(latlng).title(variablesList[i].locName +" :" + variablesList[i].locId).snippet("Number of Species " + variablesList[i].numSpeciesAllTime))
                     map.animateCamera(CameraUpdateFactory.zoomTo(18.0f))
                     map.moveCamera(CameraUpdateFactory.newLatLng(userLatLong))
+
                 }
             }
         }
@@ -203,7 +209,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
             val request = Request.Builder().url(url).build()
             val response = client.newCall(request).execute()
             val data = response.body!!.string()
-            Log.d("GoogleMap" , " data : $data")
+//            Log.d("GoogleMap" , " data : $data")
             val result =  ArrayList<List<LatLng>>()
             try{
                 val respObj = Gson().fromJson(data,GoogleMapDTO::class.java)

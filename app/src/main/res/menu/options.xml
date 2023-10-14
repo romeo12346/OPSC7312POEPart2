@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/ic_nearbyfrag"
+        android:icon="@drawable/map"
+        android:title="Hotspots"/>
+    <item
         android:id="@+id/ic_birdsfrag"
         android:icon="@drawable/bird"
         android:title="Birds"/>
@@ -10,10 +14,7 @@
         android:icon="@drawable/baseline_list_24"
         android:title="Observations"/>
 
-    <item
-        android:id="@+id/ic_nearbyfrag"
-        android:icon="@drawable/map"
-        android:title="Hotspots"/>
+
     <item
         android:id="@+id/ic_settingsfrag"
         android:icon="@drawable/baseline_app_settings_alt_24"
