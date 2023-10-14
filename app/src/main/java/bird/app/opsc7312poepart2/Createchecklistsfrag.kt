@@ -1,19 +1,17 @@
 package bird.app.opsc7312poepart2
 
 //Firebase Imports
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.google.firebase.auth.FirebaseAuth
 //import com.google.firebase.storage.FirebaseStorage
 //import com.google.firebase.storage.ktx.storage
 
 class Createchecklistsfrag : Fragment() {
     //Firebase setup Vars
-    private lateinit var auth: FirebaseAuth
+    /*private lateinit var auth: FirebaseAuth
     private lateinit var txtcreachecklistname: TextView
     private lateinit var  txtcreachecklistlocation: TextView
     private lateinit var  txtcreachecklistdate: TextView
-    //private lateinit var  btncreatechecklist: Button
+    //private lateinit var  btncreatechecklist: Button*/
     /*
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
