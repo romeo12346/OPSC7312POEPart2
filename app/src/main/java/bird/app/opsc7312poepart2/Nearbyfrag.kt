@@ -13,22 +13,26 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import android.Manifest
-import android.content.Context
+import android.graphics.Color
+import android.os.AsyncTask
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.SeekBar
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
 import com.google.gson.Gson
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import java.net.URL
 import java.util.concurrent.Executors
 
-class Nearbyfrag : Fragment(), OnMapReadyCallback {
+class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private lateinit var mapView: MapView
     lateinit var variablesList:List<Place>
     var userLatitude: Double= 0.0
@@ -107,6 +111,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback {
     }
 
     override fun onMapReady(map: GoogleMap) {
+        map.setOnMarkerClickListener(this)
         if (ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED
             && ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -133,6 +138,13 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback {
                 }
             }
     }
+    override fun onMarkerClick(marker: Marker): Boolean {
+        val URL = getDirectionURL(LatLng(userLatitude, userLongitude),LatLng( marker.position.latitude,marker.position.longitude))
+        Log.d("GoogleMap", "URL : $URL")
+        GetDirection(URL).execute()
+
+        return false
+    }
 
     private fun InfoGetter(map: GoogleMap , userLatLong: LatLng) {
         val executor = Executors.newSingleThreadExecutor()
@@ -142,17 +154,11 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback {
             val json = url.readText()
             variablesList = Gson().fromJson(json, Array<Place>::class.java).toList()
             Handler(Looper.getMainLooper()).post {
-                // Now that variablesList is initialized, you can use it
-                Log.d("Display", "Count: ${variablesList.count()}")
-                for (i in 0 until variablesList.count()) {
-                    Log.d("Display", "Local Name: ${variablesList[i].locName}, \nLat: ${variablesList[i].lat},\nLong: ${variablesList[i].lng}, \n" +
-                            "Num of Species: ${variablesList[i].numSpeciesAllTime}")
-                }
 
                 // After getting the data, you can add markers on the map and move the camera.
                 for (i in variablesList.indices) {
                     val latlng = LatLng(variablesList[i].lat, variablesList[i].lng)
-                    map.addMarker(MarkerOptions().position(latlng).title(variablesList[i].locName))
+                    map.addMarker(MarkerOptions().position(latlng).title(variablesList[i].locName).snippet("Number of Species " + variablesList[i].numSpeciesAllTime))
                     map.animateCamera(CameraUpdateFactory.zoomTo(18.0f))
                     map.moveCamera(CameraUpdateFactory.newLatLng(userLatLong))
                 }
@@ -180,5 +186,79 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback {
         private const val MAPVIEW_BUNDLE_KEY = "MapViewBundleKey"
     }
 
+    fun getDirectionURL(origin:LatLng,dest:LatLng) : String{
+        return "https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}&destination=${dest.latitude},${dest.longitude}&sensor=false&mode=driving&key=AIzaSyD2oJm5S0-bA7l3-0u_Xr-bGYuTqhubKuY"
+    }
+
+    private inner class GetDirection(val url : String) : AsyncTask<Void, Void, List<List<LatLng>>>(){
+        override fun doInBackground(vararg params: Void?): List<List<LatLng>> {
+            val client = OkHttpClient()
+            val request = Request.Builder().url(url).build()
+            val response = client.newCall(request).execute()
+            val data = response.body!!.string()
+            Log.d("GoogleMap" , " data : $data")
+            val result =  ArrayList<List<LatLng>>()
+            try{
+                val respObj = Gson().fromJson(data,GoogleMapDTO::class.java)
+
+                val path =  ArrayList<LatLng>()
+
+                for (i in 0..(respObj.routes[0].legs[0].steps.size-1)){
+                    path.addAll(decodePolyline(respObj.routes[0].legs[0].steps[i].polyline.points))
+                }
+                result.add(path)
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
+            return result
+        }
+
+        override fun onPostExecute(result: List<List<LatLng>>) {
+            val lineoption = PolylineOptions()
+            for (i in result.indices){
+                lineoption.addAll(result[i])
+                lineoption.width(10f)
+                lineoption.color(Color.BLUE)
+                lineoption.geodesic(true)
+            }
+            Map.addPolyline(lineoption)
+        }
+    }
+    fun decodePolyline(encoded: String): List<LatLng> {
+
+        val poly = ArrayList<LatLng>()
+        var index = 0
+        val len = encoded.length
+        var lat = 0
+        var lng = 0
+
+        while (index < len) {
+            var b: Int
+            var shift = 0
+            var result = 0
+            do {
+                b = encoded[index++].toInt() - 63
+                result = result or (b and 0x1f shl shift)
+                shift += 5
+            } while (b >= 0x20)
+            val dlat = if (result and 1 != 0) (result shr 1).inv() else result shr 1
+            lat += dlat
+
+            shift = 0
+            result = 0
+            do {
+                b = encoded[index++].toInt() - 63
+                result = result or (b and 0x1f shl shift)
+                shift += 5
+            } while (b >= 0x20)
+            val dlng = if (result and 1 != 0) (result shr 1).inv() else result shr 1
+            lng += dlng
+
+            val latLng = LatLng((lat.toDouble() / 1E5),(lng.toDouble() / 1E5))
+            poly.add(latLng)
+        }
+
+        return poly
+    }
 }
 
