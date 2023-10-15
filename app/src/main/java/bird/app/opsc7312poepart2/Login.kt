@@ -13,7 +13,7 @@ import com.google.firebase.ktx.Firebase
 
 
 class Login : AppCompatActivity() {
-
+    var check = true
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,18 +21,25 @@ class Login : AppCompatActivity() {
 
         auth = Firebase.auth
         checkFirebaseUser()
+
         val btnlogin: Button = findViewById(R.id.btnlogin)
         val btnregisterpage: Button = findViewById(R.id.btnregisterpage)
 
         //Logs User into system
         btnlogin.setOnClickListener(){
             performLogin()
+
         }
         //redirects to register Page
         btnregisterpage.setOnClickListener(){
             val intent = Intent(this, Register::class.java)
             startActivity(intent)
         }
+
+        if (check == true){
+            finish()
+        }
+
     }
     private fun performLogin(){
 
@@ -68,7 +75,7 @@ class Login : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         } else {
-
+                check = false
         }
     }
 }

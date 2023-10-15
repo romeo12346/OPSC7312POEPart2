@@ -35,6 +35,7 @@ import java.util.Locale
 import java.util.concurrent.Executors
 
 var localID : String? = null
+var localName: String? = null
 class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private lateinit var mapView: MapView
     lateinit var variablesList:List<Place>
@@ -171,8 +172,8 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
         val URL = getDirectionURL(LatLng(userLatitude, userLongitude),LatLng( marker.position.latitude,marker.position.longitude))
         val s = marker.title.toString()
         localID = s.replaceBefore(":","").substring(1)
-
-        Log.d("GoogleMap", "URL: Yo $localID")
+        localName = marker.title.toString().substringBefore(":")
+        Log.d("GoogleMap", "URL: Yo $localName")
         GetDirection(URL).execute()
 
         return false

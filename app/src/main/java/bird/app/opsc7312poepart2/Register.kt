@@ -20,10 +20,17 @@ class Register : AppCompatActivity() {
         auth = Firebase.auth
 
         val btnregister: Button = findViewById(R.id.btnregister)
-
+        val btnLogin: Button = findViewById(R.id.btnReturnLogin)
 
         btnregister.setOnClickListener(){
             performReg()
+
+        }
+
+        btnLogin.setOnClickListener(){
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            finish()
         }
 
     }

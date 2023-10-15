@@ -9,15 +9,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-        <EditText
-            android:id="@+id/txtDate"
+        <TextView
+            android:id="@+id/txtOName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:hint="Date"
+            android:hint="Name"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/txtODate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="yyyy/mm/dd"
             android:inputType="date"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -25,21 +38,33 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/txtTime"
+            android:id="@+id/txtOTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:hint="Time"
+            android:hint="hh:mm"
             android:inputType="time"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="18sp" />
-
+        <TextView
+            android:id="@+id/txtOLoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="Location"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="18sp" />
         <Button
-            android:id="@+id/btnAddSub"
+            android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
