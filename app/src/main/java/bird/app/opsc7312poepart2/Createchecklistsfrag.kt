@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 //import com.google.firebase.storage.FirebaseStorage
 //import com.google.firebase.storage.ktx.storage
 
-class Createchecklistsfrag : Fragment() {
+class Createchecklistsfrag : Fragment() {//may remove these fragment clases altogether
     //Firebase setup Vars
     /*private lateinit var auth: FirebaseAuth
     private lateinit var txtcreachecklistname: TextView
