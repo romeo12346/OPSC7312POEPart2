@@ -152,6 +152,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
         }
         Map = map
         map.isMyLocationEnabled = true
+        map.mapType = GoogleMap.MAP_TYPE_HYBRID
         val fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location ->
@@ -192,8 +193,9 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
                 for (i in variablesList.indices) {
                     val latlng = LatLng(variablesList[i].lat, variablesList[i].lng)
                     map.addMarker(MarkerOptions().position(latlng).title(variablesList[i].locName +" :" + variablesList[i].locId).snippet("Number of Species " + variablesList[i].numSpeciesAllTime))
-                    map.animateCamera(CameraUpdateFactory.zoomTo(18.0f))
+                    map.animateCamera(CameraUpdateFactory.zoomTo(10.0f))
                     map.moveCamera(CameraUpdateFactory.newLatLng(userLatLong))
+
 
                 }
             }
