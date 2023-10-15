@@ -33,35 +33,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <!--<Button
         android:id="@+id/btnkilometres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="81dp"
-        android:layout_marginEnd="19dp"
         android:text="Kilometres"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnmiles"
-        app:layout_constraintEnd_toStartOf="@+id/btnmiles"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="152dp" />-->
 
-    <Button
+    <!--<Button
         android:id="@+id/btnmiles"
-        android:layout_width="0dp"
+        android:layout_width="88dp"
         android:layout_height="50dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="106dp"
         android:text="Miles"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnkilometres"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        tools:layout_editor_absoluteX="217dp"
+        tools:layout_editor_absoluteY="150dp" />-->
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="7dp"
         android:text="Logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnmiles" />-->
+        app:layout_constraintTop_toBottomOf="@+id/btnradiokilometres" />
+
+    <RadioButton
+        android:id="@+id/btnradiokilometres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="72dp"
+        android:text="Kilometres"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogout"
+        app:layout_constraintStart_toStartOf="@+id/textView33"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <RadioButton
+        android:id="@+id/btnradiomiles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="7dp"
+        android:text="Miles"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+        app:layout_constraintEnd_toEndOf="@+id/textView33"
+        app:layout_constraintStart_toStartOf="@+id/btnLogout" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
