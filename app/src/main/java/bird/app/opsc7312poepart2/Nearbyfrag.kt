@@ -1,28 +1,27 @@
 package bird.app.opsc7312poepart2
 
-import android.content.pm.PackageManager
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import androidx.core.app.ActivityCompat
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.OnMapReadyCallback
 import android.Manifest
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.location.Geocoder
 import android.os.AsyncTask
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.SeekBar
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
@@ -41,7 +40,7 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
     lateinit var variablesList:List<Place>
     var userLatitude: Double= 0.0
     var userLongitude: Double= 0.0
-    var distance: Int = 25
+    var distance: Int = 25 //changed from Int to Doable
     private lateinit var Map : GoogleMap
     private lateinit var userLocation: TextView
     private var currentPolyline: Polyline? = null
@@ -73,10 +72,31 @@ class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListen
 
             override fun onStopTrackingTouch(seek: SeekBar) {
                 // write custom code for progress is stopped
+                //Code for Settings Buttons
+                /*if(btnradiomiles.clicked)
+                {
+                    val measurement = 1
+                    val measurementM = measurement* 0.621371
+                    //
+                    distance.roundToInt() = seek.progress* measurementM //converts the Km to Miles
+                    Toast.makeText(context,
+                        "" + seek.progress + "Miles",
+                        Toast.LENGTH_SHORT).show()
+                    Map.clear()
+                }
+                else
+                {
+                    distance = seek.progress
+                    Toast.makeText(context,
+                        "" + seek.progress + "km",
+                        Toast.LENGTH_SHORT).show()
+                    Map.clear()
+                }*/
                 distance = seek.progress
                 Toast.makeText(context,
                     "" + seek.progress + "km",
                     Toast.LENGTH_SHORT).show()
+
 
                 Map.clear()
 
