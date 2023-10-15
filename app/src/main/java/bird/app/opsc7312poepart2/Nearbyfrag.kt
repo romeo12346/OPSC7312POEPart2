@@ -34,7 +34,7 @@ import java.net.URL
 import java.util.Locale
 import java.util.concurrent.Executors
 
-var localID  = ""
+var localID : String? = null
 class Nearbyfrag : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private lateinit var mapView: MapView
     lateinit var variablesList:List<Place>

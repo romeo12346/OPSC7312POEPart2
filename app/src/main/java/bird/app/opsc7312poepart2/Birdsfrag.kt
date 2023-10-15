@@ -1,11 +1,16 @@
 package bird.app.opsc7312poepart2
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import java.net.HttpURLConnection
@@ -15,22 +20,53 @@ import java.util.concurrent.TimeUnit
 
 
 class Birdsfrag : Fragment() {
-    lateinit var birdList:List<Bird>
-    lateinit var spList:List<String>
-    var spieces = ""
+    lateinit var birdAdapter: BirdAdapter
+    var birdList: List<Bird> = emptyList()
+    lateinit var spList: List<String>
+    lateinit var birdView: RecyclerView
+    var spieces = "show nothing"
+    private val CodeDelay: Long = 2000
+    lateinit var bar: ProgressBar
+    var dataLoaded = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val birdsfrag = inflater.inflate(R.layout.fragment_birdsfrag, container, false)
+        birdView = birdsfrag.findViewById(R.id.birdRV)
+        birdAdapter = BirdAdapter()
+        bar = birdsfrag.findViewById(R.id.progressBar)
+        InfoGetterBird()
+
         // Inflate the layout for this fragment
-        InfoGetter()
         return birdsfrag
     }
 
 
-    private fun InfoGetter() {
-        val executor =  Executors.newSingleThreadExecutor()
+    override fun onResume() {
+        super.onResume()
+        InfoGetterBird()
+    }
+    private fun Feed() {
+
+        if (birdList.isNotEmpty()) {
+            // Only perform the UI update when birdList is not empty
+            val feed: RecyclerView = birdView
+            feed.apply {
+                layoutManager = LinearLayoutManager(context)
+                adapter = birdAdapter
+            }
+            Handler(Looper.getMainLooper()).post {
+                birdAdapter.submitList(birdList)
+            }
+            bar.visibility = View.INVISIBLE
+        }
+
+    }
+
+    fun InfoGetterBird() {
+        bar.visibility = View.VISIBLE
+        val executor = Executors.newSingleThreadExecutor()
         val builder: OkHttpClient.Builder = OkHttpClient().newBuilder()
         builder.readTimeout(10, TimeUnit.SECONDS)
         builder.connectTimeout(5, TimeUnit.SECONDS)
@@ -55,7 +91,7 @@ class Birdsfrag : Fragment() {
                     val inputStream = connection.inputStream
                     val sJson = inputStream.bufferedReader().use { it.readText() }
                     spList = Gson().fromJson(sJson, Array<String>::class.java).toList()
-                    for(sp in spList){
+                    for (sp in spList) {
                         var i = 0
                         spieces += sp + ","
                         i++
@@ -74,11 +110,23 @@ class Birdsfrag : Fragment() {
                 // Handle exceptions, such as network errors or parsing errors
             }
 
-            val url = URL("https://api.ebird.org/v2/ref/taxonomy/ebird?species=" + spieces.dropLast(1)+ "&version=2023&fmt=json")
+            val url =
+                URL("https://api.ebird.org/v2/ref/taxonomy/ebird?species=" + spieces.dropLast(1) + "&version=2023&fmt=json")
             val json = url.readText()
+
+            birdList = emptyList()
             birdList = Gson().fromJson(json, Array<Bird>::class.java).toList()
+
+
+                Log.d("list", "${birdList.size}")
+
             Log.d("json", "${json}")
+
+            Handler(Looper.getMainLooper()).post {Feed()}
         }
+
+
+
     }
 
 }

@@ -24,9 +24,11 @@ class MenuBar : AppCompatActivity() {
                 R.id.ic_checklists->replaceFrag(Frag2)
                 R.id.ic_nearbyfrag->replaceFrag(Frag6)
                 R.id.ic_settingsfrag->replaceFrag(Frag8)
+
             }
             true
         }
+
     }
     private fun replaceFrag(fragment: Fragment){
         if(fragment != null){
