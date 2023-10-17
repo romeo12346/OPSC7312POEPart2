@@ -11,7 +11,7 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="31dp"
         android:text="Nearby/Hotspots"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
@@ -22,13 +22,12 @@
 
     <TextView
         android:id="@+id/userlocation"
-        android:layout_width="391dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_width="304dp"
+        android:layout_height="23dp"
         android:layout_marginBottom="17dp"
         android:ems="10"
         android:inputType="text"
+        android:textSize="11sp"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +50,8 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="9dp"
         android:text="Your location:"
         app:layout_constraintBottom_toTopOf="@+id/userlocation"
         app:layout_constraintEnd_toEndOf="@+id/textView17"
@@ -60,10 +59,14 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/map"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="563dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 

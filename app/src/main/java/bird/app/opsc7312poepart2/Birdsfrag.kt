@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,7 +37,11 @@ class Birdsfrag : Fragment() {
         birdView = birdsfrag.findViewById(R.id.birdRV)
         birdAdapter = BirdAdapter()
         bar = birdsfrag.findViewById(R.id.progressBar)
-        InfoGetterBird()
+
+        if (localID !=null){
+            InfoGetterBird()
+        }
+
 
         // Inflate the layout for this fragment
         return birdsfrag
@@ -45,7 +50,9 @@ class Birdsfrag : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        InfoGetterBird()
+        if (localID !=null){
+            InfoGetterBird()
+        }
     }
     private fun Feed() {
 

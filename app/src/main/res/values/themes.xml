@@ -1,9 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.OPSC7312POEPart2" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Customize the action bar background color -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Customize the status bar color -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+        <!-- Customize the background color for the main content -->
+        <item name="android:windowBackground">@color/colorBackground</item>
+
+        <!-- Customize the text color for the action bar title -->
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+
+        <!-- Customize the accent color for UI components -->
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Theme for your app -->
     <style name="Theme.OPSC7312POEPart2" parent="Base.Theme.OPSC7312POEPart2" />
+
 </resources>
